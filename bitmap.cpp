@@ -1,5 +1,10 @@
 #include "bitmap.hpp"
 
+/* bitmap generation code for this was sourced from
+	https://stackoverflow.com/questions/2654480/writing-bmp-image-in-pure-c-c-without-other-libraries. 
+    
+    All rights and intellectual property are reserved by the authors in question. */
+
 void generateBitmapImage(unsigned char *image, int height, int width, char *imageFileName)
 {
 
