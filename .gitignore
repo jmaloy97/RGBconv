@@ -1,2 +1,5 @@
 RGBconv
-output.bmp
+*.bmp
+*.o
+*.exe
+*.sh
