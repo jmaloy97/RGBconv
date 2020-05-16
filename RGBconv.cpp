@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <iterator>
+#include "mainMenu.hpp"
 
 using namespace std;
 
@@ -29,6 +30,8 @@ unsigned char *createBitmapInfoHeader(int height, int width);
 
 int main()
 {
+	// mainMenu(); -- this is here mostly to test to see if my header was working right. It does.
+	
 	while (!exitstate)
 	{
 		//cout << "Testing to make sure I haven't gone senile.\n";
