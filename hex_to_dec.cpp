@@ -1,6 +1,6 @@
 /**
  *
- *	@file: RGBconv.cpp
+ *	@file: hex_to_dec.cpp
  *	@desc: Converts a hexadecimal RGB value into decimal form.
  *	@author: Hermione M.
  *	@date: 15 May 2020

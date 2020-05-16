@@ -1,2 +1,2 @@
-RGBconv: RGBconv.cpp
-	g++ -o RGBconv RGBconv.cpp
+RGBconv: hex_to_dec.cpp
+	g++ -o RGBconv hex_to_dec.cpp
