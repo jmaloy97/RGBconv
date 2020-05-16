@@ -1,6 +1,7 @@
-RGBconv
+RGBconv-linux
 *.bmp
 *.o
 *.exe
 *.sh
 testcases/
+bin/
