@@ -12,4 +12,5 @@
 void mainMenu() {
     //stub for now
     printf("You've invoked a stub.\n");
-}
+};
+
