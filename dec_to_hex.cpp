@@ -14,37 +14,99 @@
 #include <iostream>
 #include <iterator>
 #include <limits>
-#include "convert.hpp"
+#include <cstring>
 
 using namespace std;
+
+long long int value;
 int quitstate;
+char red[2];
+char green[2];
+char blue[2];
 
 void decHex()
 {
     while (!quitstate)
     {
-        string colourVal[6];
-        int red, green, blue;
-
-        cout << "Red (0-255): ";
-        cin >> red;
-
-    /*
-        if (red < 0 || red > 255)
+        if (strlen(red) == 0)
         {
-            cin.fail();
+            cout << "Enter a value for red: ";
+            cin >> value;
+            if (value < 0 || value > 255)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+
+            else if (cin.fail())
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+
+            else
+            {
+                sprintf(red, "%X", value);
+                cout << "red    " << red << endl;
+                
+            }
         }
 
-        else if (cin.fail())
+        else if (strlen(green) == 0)
         {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Try again.\n > ";
-            cin >> red;
+            cout << "Enter a value for green: ";
+            cin >> value;
+            if (value < 0 || value > 255)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+
+            else if (cin.fail())
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+
+            else
+            {
+                sprintf(green, "%X", value);
+                cout << "green    " << green << endl;
+                
+            }
         }
 
-        */
+        else if (strlen(blue) == 0)
+        {
+            cout << "Enter a value for blue: ";
+            cin >> value;
+            if (value < 0 || value > 255)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
 
-       return;
+            else if (cin.fail())
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+
+            else
+            {
+                sprintf(blue, "%X", value);
+                cout << "blue    " << blue << endl;
+            }
+        }
+
+        else {
+            cout << red << endl;
+            cout << green << endl;
+            cout << blue << endl;
+            memset(red, 0, 255);
+            memset(green, 0, 255);
+            memset(blue, 0, 255);
+            return;
+        }
     }
 }
