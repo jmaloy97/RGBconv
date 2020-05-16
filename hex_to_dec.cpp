@@ -63,8 +63,8 @@ void hexDec()
 			}
 			else
 			{
-				printf("Invalid character!\n");
-				continue;
+				printf("Invalid character found, returning to main menu...\n\n");
+				return;
 			}
 		}
 
