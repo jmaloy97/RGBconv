@@ -36,7 +36,7 @@ void hexDec()
 		if (a.size() <= 5 || a.size() >= 7)
 		{
 			cout << "FATAL ERROR: Invalid hexidecimal colour code." << endl;
-			continue;
+			return;
 		}
 
 		for (int i = 0; i < a.size(); i++)

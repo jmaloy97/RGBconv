@@ -13,10 +13,38 @@
 #include <stdlib.h>
 #include <iostream>
 #include <iterator>
+#include <limits>
 #include "convert.hpp"
 
 using namespace std;
+int quitstate;
 
-void decHex() {
-    //stub
+void decHex()
+{
+    while (!quitstate)
+    {
+        string colourVal[6];
+        int red, green, blue;
+
+        cout << "Red (0-255): ";
+        cin >> red;
+
+    /*
+        if (red < 0 || red > 255)
+        {
+            cin.fail();
+        }
+
+        else if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Try again.\n > ";
+            cin >> red;
+        }
+
+        */
+
+       return;
+    }
 }

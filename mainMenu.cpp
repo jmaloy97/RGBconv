@@ -24,7 +24,7 @@ void mainMenu()
         cout << "====== RGB Converter ========" << endl
              << "1. Convert Hex to Decimal" << endl
              << "2. Convert Decimal to Hex" << endl
-             << "9. Exit" << endl
+             << "9 or 0. Exit" << endl
              << "=============================" << endl
              << "Selection: ";
              cin >> response;
@@ -34,10 +34,13 @@ void mainMenu()
             hexDec(); //convert hex to decimal
             break;
         case 2:
-            printf("\nUnimplemented! Sorry about that!\n");
+            cout << "\n\n\nWARNING: This feature is not fully implemented! It probably will not work!!\n\n\n";
             decHex(); //convert decimal to hex
             break;
         case 9:
+            exit(0); //terminate
+            break;
+        case 0:
             exit(0); //terminate
             break;
         }
