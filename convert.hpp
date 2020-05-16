@@ -1,0 +1,2 @@
+void hexDec();
+void decHex();

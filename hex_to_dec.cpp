@@ -9,20 +9,11 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <iterator>
-#include "mainMenu.hpp"
-#include "bitmap.hpp"
-
 using namespace std;
 int exitstate;
 
-int main()
+void hexDec()
 {
-	// mainMenu(); -- this is here mostly to test to see if my header was working right. It does.
-
 	while (!exitstate)
 	{
 		//cout << "Testing to make sure I haven't gone senile.\n";
