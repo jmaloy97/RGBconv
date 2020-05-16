@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iterator>
 #include "bitmap.hpp"
 
 /* bitmap generation code for this was sourced from

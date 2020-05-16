@@ -9,15 +9,12 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <iterator>
 #include "mainMenu.hpp"
 #include "bitmap.hpp"
 #include "convert.hpp"
 
 int main() {
     //it does nothing but...
+    mainMenu();
     hexDec();
 }

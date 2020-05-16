@@ -1,3 +1,6 @@
+#ifndef MAINMENU_H
+#define MAINMENU_H
+
 /**
  *
  *	@file: mainMenu.hpp
@@ -9,8 +12,6 @@
  *
  */
 
-void mainMenu() {
-    //stub for now
-    printf("You've invoked a stub.\n");
-};
+void mainMenu();
 
+#endif

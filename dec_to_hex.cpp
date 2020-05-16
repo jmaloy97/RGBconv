@@ -8,6 +8,6 @@
 
 using namespace std;
 
-void decHex() {
+int decHex() {
     //stub
 }

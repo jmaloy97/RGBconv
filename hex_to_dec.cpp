@@ -12,7 +12,15 @@
 using namespace std;
 int exitstate;
 
-void hexDec()
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iterator>
+
+#include "convert.hpp"
+#include "bitmap.hpp"
+
+int hexDec()
 {
 	while (!exitstate)
 	{
@@ -27,7 +35,7 @@ void hexDec()
 		if (a.size() <= 5 || a.size() >= 7)
 		{
 			cout << "FATAL ERROR: Invalid hexidecimal colour code." << endl;
-			return 0;
+			exit(0);
 		}
 
 		for (int i = 0; i < a.size(); i++)
@@ -105,7 +113,7 @@ void hexDec()
 
 		else
 		{
-			return 0;
+			exit(0);
 		}
 	}
 }
