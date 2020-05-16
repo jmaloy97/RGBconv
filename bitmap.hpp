@@ -11,4 +11,4 @@ void generateBitmapImage(unsigned char *image, int height, int width, char *imgF
 unsigned char *createBitmapFileHeader(int height, int width, int paddingSize);
 unsigned char *createBitmapInfoHeader(int height, int width);
 
-#endif
+#endif /*BITMAP_H*/

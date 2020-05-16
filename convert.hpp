@@ -4,4 +4,4 @@
 void hexDec();
 void decHex();
 
-#endif
+#endif // CONVERT_H

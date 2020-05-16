@@ -1,6 +1,3 @@
-#ifndef MAINMENU_H
-#define MAINMENU_H
-
 /**
  *
  *	@file: mainMenu.hpp
@@ -12,6 +9,9 @@
  *
  */
 
+#ifndef MAINMENU_H
+#define MAINMENU_H
+
 void mainMenu();
 
-#endif
+#endif // MAINMENU_H

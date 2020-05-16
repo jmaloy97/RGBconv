@@ -1,2 +1,5 @@
-RGBconv: main
-	g++ -o RGBconv hex_to_dec.cpp dec_to_hex.cpp bitmap.cpp main.cpp
+RGBconv:
+	g++ -o RGBconv main.cpp bitmap.cpp dec_to_hex.cpp hex_to_dec.cpp mainMenu.cpp
+
+clean:
+	rm RGBconv

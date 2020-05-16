@@ -19,8 +19,9 @@ int exitstate;
 
 #include "convert.hpp"
 #include "bitmap.hpp"
+#include "mainMenu.hpp"
 
-int hexDec()
+void hexDec()
 {
 	while (!exitstate)
 	{
@@ -113,7 +114,7 @@ int hexDec()
 
 		else
 		{
-			exit(0);
+			mainMenu();
 		}
 	}
 }
