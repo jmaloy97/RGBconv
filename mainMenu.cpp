@@ -34,7 +34,6 @@ void mainMenu()
             hexDec(); //convert hex to decimal
             break;
         case 2:
-            cout << "\n\n\nWARNING: This feature is not fully implemented! It probably will not work!!\n\n\n";
             decHex(); //convert decimal to hex
             break;
         case 9:

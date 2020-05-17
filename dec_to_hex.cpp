@@ -19,12 +19,19 @@
 #include <limits>
 #include <cstring>
 
+#include "convert.hpp"
+#include "bitmap.hpp"
+#include "mainMenu.hpp"
+
 using namespace std;
+
+//numeric_limits<unsigned char> constraints;
 
 int quitstate;
 char red[3];
 char green[3];
 char blue[3];
+int rx, bx, gx;
 
 const char *paddedHexFormat = "%02X";
 
@@ -59,19 +66,69 @@ int promptInBounds(int floor, int ceiling, string prompt)
 void decHex()
 {
     int value;
-    numeric_limits<unsigned char> constaints;
     while (!quitstate)
     {
         if (strlen(red) == 0)
-            sprintf(red, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for red: "));
+        {
+            rx = promptInBounds(0, 255, "Enter a value for red: ");
+            sprintf(red, paddedHexFormat, rx);
+        }
         else if (strlen(green) == 0)
-            sprintf(green, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for green: "));
+        {
+            gx = promptInBounds(0, 255, "Enter a value for green: ");
+            sprintf(green, paddedHexFormat, gx);
+        }
         else if (strlen(blue) == 0)
-            sprintf(blue, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for blue: "));
+        {
+            bx = promptInBounds(0, 255, "Enter a value for blue: ");
+            cout << bx << endl;
+            sprintf(blue, paddedHexFormat, bx);
+        }
         else
         {
-            cout << red << green << blue << endl;
-            return;
+            cout << "#" << red << green << blue << "\n"
+                 << endl;
+            char startOver;
+
+            int height = 500;
+            int width = 500;
+            unsigned char image[height][width][bpp];
+            char *imageFileName = "output.bmp";
+
+            cout << "rx: " << rx
+                 << "\ngx: " << gx
+                 << "\nbx: " << bx << endl;
+
+            int i, j;
+            for (i = 0; i < height; i++)
+            {
+                for (j = 0; j < width; j++)
+                {
+                    image[i][j][2] = rx; ///red
+                    image[i][j][1] = gx; ///green
+                    image[i][j][0] = bx; ///blue
+                }
+            }
+
+            generateBitmapImage((unsigned char *)image, height, width, imageFileName);
+            printf("\nImage generated: ");
+            cout << imageFileName << endl;
+
+            cout << "\nStart over (Y/N)? ";
+            cin >> startOver;
+
+            if (startOver == 'Y' || startOver == 'y')
+            {
+                printf("\n");
+                memset(red, 0, sizeof(red));
+                memset(green, 0, sizeof(green));
+                memset(blue, 0, sizeof(blue));
+            }
+
+            else
+            {
+                return;
+            }
         }
     }
 }
