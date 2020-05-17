@@ -2,7 +2,10 @@
  *
  *	@file: dec_to_hex.cpp
  *	@desc: Converts a decimal RGB value into hex form.
- *	@author: Hermione M.
+ *
+ *	@authors: Hermione M.
+ *            Jeremy B.
+ * 
  *	@date: 16 May 2020
  *
  *	This file is licensed under the BSD License: enter requisite licensing bullshit here.
@@ -18,94 +21,56 @@
 
 using namespace std;
 
-long long int value;
 int quitstate;
-char red[2];
-char green[2];
-char blue[2];
+char red[3];
+char green[3];
+char blue[3];
+
+const char *paddedHexFormat = "%02X";
+
+int numPrompt(string prompt)
+{
+    int val;
+    do
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << prompt;
+        cin >> val;
+    } while (cin.fail());
+    return val;
+}
+
+bool inBounds(int floor, int ceiling, int value)
+{
+    return ((value >= floor) && (value <= ceiling));
+}
+
+int promptInBounds(int floor, int ceiling, string prompt)
+{
+    int value = floor;
+    do
+    {
+        value = numPrompt(prompt);
+    } while (!inBounds(floor, ceiling, value));
+    return value;
+}
 
 void decHex()
 {
+    int value;
+    numeric_limits<unsigned char> constaints;
     while (!quitstate)
     {
         if (strlen(red) == 0)
-        {
-            cout << "Enter a value for red: ";
-            cin >> value;
-            if (value < 0 || value > 255)
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else if (cin.fail())
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else
-            {
-                sprintf(red, "%X", value);
-                cout << "red    " << red << endl;
-                
-            }
-        }
-
+            sprintf(red, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for red: "));
         else if (strlen(green) == 0)
-        {
-            cout << "Enter a value for green: ";
-            cin >> value;
-            if (value < 0 || value > 255)
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else if (cin.fail())
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else
-            {
-                sprintf(green, "%X", value);
-                cout << "green    " << green << endl;
-                
-            }
-        }
-
+            sprintf(green, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for green: "));
         else if (strlen(blue) == 0)
+            sprintf(blue, paddedHexFormat, promptInBounds(constaints.min(), constaints.max(), "Enter a value for blue: "));
+        else
         {
-            cout << "Enter a value for blue: ";
-            cin >> value;
-            if (value < 0 || value > 255)
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else if (cin.fail())
-            {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-
-            else
-            {
-                sprintf(blue, "%X", value);
-                cout << "blue    " << blue << endl;
-            }
-        }
-
-        else {
-            cout << red << endl;
-            cout << green << endl;
-            cout << blue << endl;
-            memset(red, 0, 255);
-            memset(green, 0, 255);
-            memset(blue, 0, 255);
+            cout << red << green << blue << endl;
             return;
         }
     }
