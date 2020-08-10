@@ -16,11 +16,23 @@
 
 using namespace std;
 
+void Clear()
+{
+#if defined _WIN32
+    system("cls");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("clear");
+#elif defined (__APPLE__)
+    system("clear");
+#endif
+}
+
 void mainMenu()
 {
     int response = 0;
     while (true)
     {
+        Clear();
         cout << "====== RGB Converter ========" << endl
              << "1. Convert Hex to Decimal" << endl
              << "2. Convert Decimal to Hex" << endl

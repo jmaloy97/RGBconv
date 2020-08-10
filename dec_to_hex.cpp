@@ -81,13 +81,12 @@ void decHex()
         else if (strlen(blue) == 0)
         {
             bx = promptInBounds(0, 255, "Enter a value for blue: ");
-            cout << bx << endl;
+            //cout << bx << endl;
             sprintf(blue, paddedHexFormat, bx);
         }
         else
         {
-            cout << "#" << red << green << blue << "\n"
-                 << endl;
+            cout << "\nHexadecimal RGB value: #" << red << green << blue << endl;
             char startOver;
 
             int height = 500;
@@ -95,9 +94,9 @@ void decHex()
             unsigned char image[height][width][bpp];
             char *imageFileName = "output.bmp";
 
-            cout << "rx: " << rx
+            /* cout << "rx: " << rx
                  << "\ngx: " << gx
-                 << "\nbx: " << bx << endl;
+                 << "\nbx: " << bx << endl; */
 
             int i, j;
             for (i = 0; i < height; i++)
