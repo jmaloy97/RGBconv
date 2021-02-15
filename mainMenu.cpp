@@ -33,7 +33,9 @@ void mainMenu()
     while (true)
     {
         Clear();
-        cout << "====== RGB Converter ========" << endl
+        cout << "=============================" << endl
+             << "RGB Converter alpha v0.2.2" << endl
+             << "============================" << endl
              << "1. Convert Hex to Decimal" << endl
              << "2. Convert Decimal to Hex" << endl
              << "9 or 0. Exit" << endl
