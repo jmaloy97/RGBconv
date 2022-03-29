@@ -3,5 +3,6 @@
 
 void hexDec();
 void decHex();
+void paradox();
 
 #endif // CONVERT_H

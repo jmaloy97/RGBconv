@@ -38,6 +38,7 @@ void mainMenu()
              << "============================" << endl
              << "1. Convert Hex to Decimal" << endl
              << "2. Convert Decimal to Hex" << endl
+             << "3. Clausewitz Engine RGB conversion" << endl
              << "9 or 0. Exit" << endl
              << "=============================" << endl
              << "Selection: ";
@@ -49,6 +50,9 @@ void mainMenu()
             break;
         case 2:
             decHex(); //convert decimal to hex
+            break;
+        case 3:
+            paradox(); //convert to RGB used in paradox games
             break;
         case 9:
             exit(0); //terminate
